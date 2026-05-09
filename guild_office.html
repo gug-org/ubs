@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Guild Office | UBS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ubs-blue': '#1e3a8a',
+                        'ubs-gold': '#f59e0b',
+                        'ubs-slate': '#475569',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-900" x-data="guildData()">
+
+    <div class="bg-white py-4 px-6 lg:px-16 border-b border-slate-100">
+        <a href="student_body.html" class="text-ubs-blue hover:text-ubs-gold text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back to Student Body
+        </a>
+    </div>
+
+    <section class="py-16 lg:py-24 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 bg-white p-10 rounded-2xl shadow-xl border border-slate-100 text-center relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-ubs-gold/10 rounded-full"></div>
+                <div class="w-24 h-24 rounded-full bg-ubs-blue flex items-center justify-center text-ubs-gold font-serif text-5xl mx-auto mb-6 border-4 border-slate-100 shadow-inner">K</div>
+                <h2 class="text-3xl font-serif text-ubs-blue font-bold">H.E. Kato Emmanuel</h2>
+                <p class="text-ubs-gold font-bold uppercase tracking-[0.2em] text-sm mt-1">Guild President, 2025/2026</p>
+                <div class="h-1 w-20 bg-slate-200 mx-auto mt-6"></div>
+            </div>
+
+            <div class="lg:col-span-7 lg:pl-8">
+                <div class="inline-block px-4 py-1 bg-ubs-blue/10 text-ubs-blue rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                    Presidential Message
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-serif text-ubs-blue mb-8 leading-tight">Serving with Integrity and Purpose.</h1>
+                
+                <div class="prose prose-slate prose-lg max-w-none text-slate-700 space-y-6">
+                    <p class="text-xl italic font-light text-slate-500">"Dear fellow students, it is an honor to serve as your voice and your advocate."</p>
+                    <p>Our tenure as the Guild Cabinet is rooted in the biblical principle of servant leadership. We are here to bridge the gap between the student body and the administration, ensuring that your spiritual, academic, and social needs are met with excellence.</p>
+                    <p>Together, let us build a legacy that honors God and strengthens our community. My door is always open for your ideas and prayers as we navigate this academic year together.</p>
+                    <p class="font-serif text-ubs-blue font-bold text-2xl mt-8">— Kato Emmanuel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-20 px-6 lg:px-16 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl font-serif text-ubs-blue font-bold">The Guild Cabinet</h2>
+                    <p class="text-slate-500 mt-2">The dedicated executive team serving the student community.</p>
+                </div>
+                <div class="h-1 w-24 bg-ubs-gold hidden md:block"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <template x-for="(member, index) in cabinet" :key="index">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-ubs-gold hover:bg-white hover:shadow-lg">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-serif mb-4 shadow-inner"
+                             :class="index % 2 === 0 ? 'bg-ubs-blue text-ubs-gold' : 'bg-ubs-gold text-ubs-blue'"
+                             x-text="member.name.split(' ').map(n=>n[0]).join('')"></div>
+                        
+                        <h3 class="font-bold text-slate-950 leading-tight" x-text="member.name"></h3>
+                        <p class="text-ubs-gold text-[10px] font-bold uppercase tracking-widest mt-1" x-text="member.role"></p>
+                        
+                        <div class="h-px w-12 bg-slate-200 mt-4 group-hover:bg-ubs-gold"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        function guildData() {
+            return {
+                cabinet: [
+                    {
+                        name: "Ms. Sarah Namukasa",
+                        role: "Vice President"
+                    },
+                    {
+                        name: "Mr. Joshua Mutiaba",
+                        role: "General Secretary"
+                    },
+                    {
+                        name: "Ms. Grace Akello",
+                        role: "Finance Minister"
+                    },
+                    {
+                        name: "Mr. Paul Okello",
+                        role: "Speaker"
+                    },
+                    {
+                        name: "Ms. Mercy Joy",
+                        role: "Minister of Religion"
+                    },
+                    {
+                        name: "Mr. David Ssewa",
+                        role: "Minister of Welfare"
+                    },
+                    {
+                        name: "Ms. Faith Hope",
+                        role: "Minister of Academics"
+                    },
+                    {
+                        name: "Mr. Timothy John",
+                        role: "Minister of Sports"
+                    }
+                ]
+            }
+        }
+    </script>
+</body>
+</html>

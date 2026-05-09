@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Uganda Baptist Seminary</title>
+    
+    <meta name="description" content="Uganda Baptist Seminary: Equipping leaders for the Global Church.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ubs: {
+                            blue: '#0A2540',
+                            light: '#133A63',
+                            gold: '#F0A30A',
+                            hover: '#D68F05'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        [x-cloak] { display: none !important; }
+        .dropdown-menu { display: none; }
+        .group:hover .dropdown-menu { display: flex; }
+
+
+
+
+    </style>
+</head>
+
+<body class="font-sans text-slate-900 bg-slate-50">
+
+<header 
+    x-data="{ mobileMenuOpen: false }" 
+    class="fixed w-full top-0 left-0 z-[100] bg-white/95 backdrop-blur-md py-3 shadow-lg px-6 lg:px-16 flex justify-between items-center transition-all"
+>
+    <a href="index.html" class="flex items-center gap-3 z-[110] group">
+        <img src="https://ugandabaptistseminary.org/wp-content/uploads/2026/05/ubs-logo.png" alt="UBS Logo" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        <div class="flex flex-col">
+            <h1 class="text-ubs-blue font-serif leading-none text-xs md:text-sm uppercase tracking-widest font-bold">
+                Uganda Baptist Seminary
+            </h1>
+            <p class="text-ubs-gold text-[9px] md:text-[10px] uppercase tracking-wider font-semibold mt-1">
+                "Preach the Word (2 Timothy 4:2)"
+            </p>
+        </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center">
+        <ul class="flex items-center space-x-7 text-[11px] font-bold uppercase tracking-widest text-slate-700">
+            <li class="relative group py-2">
+                <a href="about.html" class="hover:text-ubs-gold flex items-center gap-1 transition-colors">
+                    About <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                    <div class="w-56 bg-white border-t-2 border-ubs-gold shadow-xl rounded-b">
+                        <a href="about.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">About Us</a>
+                        <a href="legacy.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Legacy</a>
+                        <a href="doctrine.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Doctrine</a>
+                        <a href="faculty.html" class="block px-5 py-4 hover:bg-slate-50 hover:text-ubs-gold transition">Faculty & Admin</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="relative group py-2">
+                <a href="programs.html" class="hover:text-ubs-gold flex items-center gap-1 transition-colors">
+                    Programs <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                    <div class="w-56 bg-white border-t-2 border-ubs-gold shadow-xl rounded-b">
+                        <a href="programs.html#certificate" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Certificate</a>
+                        <a href="programs.html#diploma" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Diploma</a>
+                        <a href="programs.html#bachelor" class="block px-5 py-4 hover:bg-slate-50 hover:text-ubs-gold transition">Bachelor</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="relative group py-2">
+                <a href="admissions.html" class="hover:text-ubs-gold flex items-center gap-1 transition-colors">
+                    Admission <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                    <div class="w-56 bg-white border-t-2 border-ubs-gold shadow-xl rounded-b">
+                        <a href="application_form.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Application Form</a>
+                        <a href="tution_rates.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Tuition Rates</a>
+                        <a href="scholarship.html" class="block px-5 py-4 hover:bg-slate-50 hover:text-ubs-gold transition">Scholarship</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="relative group py-2">
+                <a href="newsroom.html" class="hover:text-ubs-gold flex items-center gap-1 transition-colors">
+                    Newsroom <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                    <div class="w-56 bg-white border-t-2 border-ubs-gold shadow-xl rounded-b">
+                        <a href="graduation.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Graduation</a>
+                        <a href="events.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Events</a>
+                        <a href="alumni.html" class="block px-5 py-4 hover:bg-slate-50 hover:text-ubs-gold transition">UBS Alumni</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="relative group py-2">
+                <a href="campus.html" class="hover:text-ubs-gold flex items-center gap-1 transition-colors">
+                    Campus <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                    <div class="w-56 bg-white border-t-2 border-ubs-gold shadow-xl rounded-b">
+                         <a href="explore.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Explore</a>
+                        <a href="campus_life.html" class="block px-5 py-4 border-b border-slate-100 hover:bg-slate-50 hover:text-ubs-gold transition">Campus Life</a>
+                        <a href="student_body.html" class="block px-5 py-4 hover:bg-slate-50 hover:text-ubs-gold transition">Student Body</a>
+                    </div>
+                </div>
+            </li>
+
+             <form action="#" method="GET" class="relative ml-4">
+            <input type="text" placeholder="Search..." class="bg-slate-100 border-none rounded-full py-2 px-4 text-[10px] w-32 focus:w-48 transition-all duration-300 outline-none focus:ring-1 focus:ring-ubs-gold">
+            <button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </button>
+        </form>
+
+            <li class="ml-4">
+                <a href="#give" class="bg-ubs-gold text-ubs-blue px-6 py-2.5 rounded font-bold hover:bg-ubs-blue hover:text-white transition shadow-md">Donate</a>
+            </li>
+        </ul>
+    </nav>
+
+    <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden flex items-center justify-center p-2 text-ubs-blue z-[110]">
+        <svg x-show="!mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <svg x-cloak x-show="mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+
+    <div x-cloak x-show="mobileMenuOpen" class="absolute top-full left-0 w-full bg-white shadow-2xl lg:hidden flex flex-col border-t border-slate-100 text-slate-800 font-semibold uppercase text-[11px] tracking-widest divide-y divide-slate-100 max-h-[85vh] overflow-y-auto">
+         <div x-data="{ open: false }">
+            <button @click="open = !open" class="w-full flex justify-between items-center px-6 py-4 hover:bg-slate-50 text-ubs-blue">
+                <span>About</span>
+                <svg :class="open ? 'rotate-180' : ''" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div x-show="open" x-collapse class="bg-slate-50 flex flex-col">
+                <a href="about.html" class="px-10 py-3 border-b border-slate-200 hover:text-ubs-gold">About Us</a>
+                <a href="legacy.html" class="px-10 py-3 border-b border-slate-200 hover:text-ubs-gold">Legacy</a>
+                <a href="doctrine.html" class="px-10 py-3 border-b border-slate-200 hover:text-ubs-gold">Doctrine</a>
+                <a href="faculty.html" class="px-10 py-3 hover:text-ubs-gold">Faculty & Admin</a>
+            </div>
+         </div>
+         <a href="#give" class="px-6 py-5 bg-ubs-gold text-ubs-blue text-center font-bold text-sm tracking-[0.2em]">Donate Now</a>
+    </div>
+</header>
+
+<header class="relative bg-slate-950 pt-40 pb-32 px-6 overflow-hidden flex items-center justify-center min-h-screen"
+    x-data="{ 
+        activeImage: 0, 
+        images: [
+            'https://ugandabaptistseminary.org/wp-content/uploads/2014/06/Grad-Med.jpg',
+            'https://ugandabaptistseminary.org/wp-content/uploads/2017/09/IMG_8128.jpg',
+            'https://ugandabaptistseminary.org/wp-content/uploads/2017/09/IMG_8166.jpg',
+            'https://ugandabaptistseminary.org/wp-content/uploads/2017/09/IMG_8100.jpg',
+            'https://ugandabaptistseminary.org/wp-content/uploads/2014/06/Jack-Med.jpg'
+        ],
+        next() { this.activeImage = (this.activeImage + 1) % this.images.length },
+        prev() { this.activeImage = (this.activeImage - 1 + this.images.length) % this.images.length },
+        init() { setInterval(() => this.next(), 6000) }
+    }">
+
+    <div class="absolute inset-0 z-0">
+        <template x-for="(img, index) in images" :key="index">
+            <div x-show="activeImage === index" 
+                 x-transition:enter="transition ease-out duration-1000"
+                 x-transition:enter-start="opacity-0 scale-105"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-1000"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="absolute inset-0 w-full h-full">
+                <img :src="img" class="w-full h-full object-cover opacity-50" alt="Campus Background">
+            </div>
+        </template>
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950 z-[1]"></div>
+    <div class="absolute inset-0 bg-radial-gradient from-transparent to-slate-950/60 z-[1]"></div>
+
+    <button @click="prev()" class="absolute left-6 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full border border-white/10 text-white/70 backdrop-blur-md hover:bg-ubs-gold hover:text-ubs-blue hover:border-ubs-gold transition-all duration-300 hidden md:block">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+    <button @click="next()" class="absolute right-6 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full border border-white/10 text-white/70 backdrop-blur-md hover:bg-ubs-gold hover:text-ubs-blue hover:border-ubs-gold transition-all duration-300 hidden md:block">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+
+    <div class="relative z-10 text-center px-4 max-w-5xl">
+        <div class="opacity-100 transform-none">
+
+ <span class="inline-flex items-center gap-3 px-4 py-1.5 border border-ubs-gold/30 rounded-full bg-ubs-gold/5 text-ubs-gold text-[10px] md:text-xs uppercase tracking-[0.5em] mb-8 backdrop-blur-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-ubs-gold animate-pulse"></span>
+                Established 1988
+            </span>
+
+            <h1 class="text-5xl md:text-8xl font-serif text-white mb-8 leading-[1.1] tracking-tight">
+                Training Leaders to <br> 
+                <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-ubs-gold via-yellow-200 to-ubs-gold">
+                    Transform Nations.
+                </span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-300/90 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                Equipping men and women for Gospel-centered ministry through <span class="text-white font-normal">rigorous academic study</span> and spiritual formation in Jinja.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                <a href="programs.html" class="group relative px-10 py-4 bg-ubs-gold text-ubs-blue font-bold overflow-hidden transition-all duration-300">
+                    <span class="relative z-10">Explore Programs</span>
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+                <a href="admissions.html" class="px-10 py-4 border border-white/20 text-white font-bold backdrop-blur-sm hover:bg-white hover:text-ubs-blue transition-all duration-300">
+                    Start Application
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center space-x-3 z-20">
+        <template x-for="(img, index) in images" :key="index">
+            <button @click="activeImage = index" 
+                    class="relative h-1 transition-all duration-500 rounded-full overflow-hidden"
+                    :class="activeImage === index ? 'w-12 bg-white/20' : 'w-4 bg-white/10'">
+                <div class="absolute inset-0 bg-ubs-gold transition-all"
+                     :class="activeImage === index ? 'w-full' : 'w-0'"
+                     :style="activeImage === index ? 'transition-duration: 6000ms; transition-timing-function: linear;' : ''">
+                </div>
+            </button>
+        </template>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+<section class="relative z-20 -mt-16 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+        <div class="bg-ubs-blue p-8 text-center text-white">
+            <div class="text-4xl font-serif mb-2 text-ubs-gold stat-number" data-target="35" data-suffix="+">0+</div>
+            <div class="text-[10px] uppercase tracking-widest text-blue-200">Years Excellence</div>
+        </div>
+        <div class="bg-ubs-light p-8 text-center text-white">
+            <div class="text-4xl font-serif mb-2 text-ubs-gold stat-number" data-target="1200" data-suffix="+">0+</div>
+            <div class="text-[10px] uppercase tracking-widest text-blue-100">Alumni Globally</div>
+        </div>
+        <div class="bg-ubs-blue p-8 text-center text-white">
+            <div class="text-4xl font-serif mb-2 text-ubs-gold stat-number" data-target="15" data-suffix="+">0+</div>
+            <div class="text-[10px] uppercase tracking-widest text-blue-200">Nations Represented</div>
+        </div>
+        <div class="bg-ubs-light p-8 text-center text-white">
+            <div class="text-4xl font-serif mb-2 text-ubs-gold stat-number" data-target="100" data-suffix="%">0%</div>
+            <div class="text-[10px] uppercase tracking-widest text-blue-100">Ministry Focus</div>
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    const animateCount = (el) => {
+        const target = +el.getAttribute('data-target');
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1500; // 1.5 seconds for the count
+        let startTime = null;
+
+        const step = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            
+            // Linear count-up
+            const currentNum = Math.floor(progress * target);
+            el.innerText = currentNum.toLocaleString() + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.innerText = target.toLocaleString() + suffix;
+            }
+        };
+        requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Trigger as soon as even 1 pixel is visible
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.stat-number').forEach(num => observer.observe(num));
+})();
+</script>
+
+
+
+
+
+    <section id="principal" class="py-24 bg-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-16">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute inset-0 bg-ubs-blue transform -translate-x-4 translate-y-4 rounded-lg"></div>
+                <img src="https://ugandabaptistseminary.org/wp-content/uploads/2014/05/KC14335.jpg" alt="Dr. Shelton Anthony" class="relative z-10 rounded-lg shadow-xl w-full object-cover">
+                
+                <div class="absolute bottom-0 left-0 right-0 z-20 p-6 rounded-b-lg bg-gradient-to-t from-black/70 to-transparent">
+                    <h4 class="font-bold text-white font-serif text-xl">Dr. Shelton Anthony</h4>
+                    <p class="text-ubs-gold text-[10px] font-bold uppercase tracking-widest mt-1">Principal, Uganda Baptist Seminary</p>
+                </div>
+            </div>
+            
+            <div>
+                <span class="text-ubs-gold text-xs font-bold uppercase tracking-widest mb-2 block">Welcome</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-ubs-blue mb-6">Message from the Principal</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    "Welcome to Uganda Baptist Seminary. For decades, our singular mission has been to train men and women who are deeply rooted in the Scriptures, passionately devoted to Jesus Christ, and thoroughly equipped to serve His Church.
+                </p>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Whether you are called to pastoral ministry, cross-cultural missions, or theological scholarship, you will find a community here that challenges you academically and nurtures you spiritually. I invite you to explore our campus, engage with our faculty, and partner with us in what God is doing in East Africa."
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-16 text-center">
+        <span class="text-ubs-gold text-xs font-bold uppercase tracking-[0.2em] mb-4 block">Our Legacy</span>
+        <h2 class="text-3xl md:text-5xl font-serif text-ubs-blue mb-6">A Heritage of Faith</h2>
+        <p class="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed mb-8">
+            Located in the heart of Jinja, near the source of the Nile, Uganda Baptist Seminary has stood as a beacon of biblical truth since its founding. We are committed to the inerrancy of Scripture and the transformative power of the Gospel.
+        </p>
+        <a href="about.html" class="text-ubs-blue font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
+            Discover Our History 
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<section id="calendar" class="py-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-16">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-ubs-gold text-xs font-bold uppercase tracking-[0.2em] mb-4 block">Important Dates</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-ubs-blue mb-6">Academic Calendar</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    Stay up to date with the seminary's schedule. Download the official academic calendar for the upcoming terms, including registration deadlines, exam weeks, and graduation dates.
+                </p>
+                <a href="img/2026-UBS-Calendar.pdf" download="UBS_Academic_Calendar.pdf" class="inline-flex items-center gap-2 bg-ubs-blue text-white px-8 py-4 font-bold uppercase tracking-widest text-xs rounded shadow-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download PDF
+                </a>
+            </div>
+
+            <div class="relative">
+                <div class="absolute inset-0 bg-ubs-gold transform translate-x-4 -translate-y-4 rounded-lg"></div>
+                <a href="img/2026-UBS-Calendar.pdf" download="UBS_Academic_Calendar.pdf" class="block relative z-10 rounded-lg shadow-xl overflow-hidden border-4 border-white bg-white">
+                    <img src="img/ubs-calender.png" alt="Academic Calendar Preview" class="w-full h-80 object-cover object-top bg-slate-200">
+                    
+                    <div class="absolute inset-0 bg-ubs-blue/50 flex items-center justify-center opacity-0 backdrop-blur-sm">
+                        <span class="bg-white text-ubs-blue text-xs font-bold uppercase tracking-widest px-6 py-3 rounded shadow-lg flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Click to Download
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="announcements" 
+         class="py-20 bg-slate-50 overflow-hidden"
+         x-data="announcementSlider"
+         @mouseenter="stopTimer()"
+         @mouseleave="startTimer()">
+    
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <span class="text-ubs-gold text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Seminary News</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-ubs-blue font-bold">Latest Announcements</h2>
+            </div>
+            
+            <div class="hidden md:flex gap-3">
+                <button @click="prev()" class="p-3 border border-slate-300 rounded-full hover:bg-ubs-blue hover:text-white transition-all active:scale-90">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button @click="next()" class="p-3 border border-slate-300 rounded-full hover:bg-ubs-blue hover:text-white transition-all active:scale-90">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="relative overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out"
+                 :style="`transform: translateX(-${activeSlide * (100 / visibleItems)}%)`"
+                 style="display: flex; width: 100%;">
+                
+                <template x-for="slide in slides" :key="slide.id">
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-slate-200 group">
+                            
+                            <div class="relative h-52 overflow-hidden">
+                                <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-ubs-blue shadow-sm" x-text="slide.date"></div>
+                            </div>
+                            
+                            <div class="p-8 flex flex-col flex-grow">
+                                <h3 class="text-xl font-serif text-ubs-blue mb-3 group-hover:text-ubs-gold transition-colors min-h-[3.5rem] line-clamp-2" x-text="slide.title"></h3>
+                                <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3" x-text="slide.desc"></p>
+                                
+                                <div class="mt-auto pt-5 border-t border-slate-50">
+                                    <a :href="slide.link" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-ubs-blue hover:text-ubs-gold transition-colors font-bold">
+                                        Read Story
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="mt-12 flex justify-center gap-2">
+            <template x-for="(s, index) in Array.from({length: slides.length - (visibleItems - 1)})" :key="index">
+                <button @click="activeSlide = index" 
+                        class="h-1.5 rounded-full transition-all duration-500"
+                        :class="activeSlide === index ? 'bg-ubs-gold w-10' : 'bg-slate-300 w-2'"></button>
+            </template>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('alpine:init', () => {
+    Alpine.data('announcementSlider', () => ({
+        activeSlide: 0,
+        timer: null,
+        innerWidth: window.innerWidth, // Track width for reactivity
+
+        get visibleItems() {
+            if (this.innerWidth >= 1024) return 3;
+            if (this.innerWidth >= 768) return 2;
+            return 1;
+        },
+
+        slides: [
+            { id: 1, date: 'Oct 12', title: 'Fall Enrollment Open', desc: 'Secure your spot for the upcoming academic year. Early registration incentives available.', image: 'https://ugandabaptistseminary.org/wp-content/uploads/2024/06/graduation-rebekah-lockhart.jpg', link: '#' },
+            { id: 2, date: 'Oct 24', title: 'ABTEN Regional Meeting', desc: 'Join us for our annual conference focusing on Gospel-Centered Ministry.', image: 'https://www.abten.org/wp-content/uploads/2023/06/20230621MP0541.jpg', link: 'https://ugandabaptistseminary.org/wp-content/uploads/2026/03/2026-ABTEN-E-_-CA-Conference.pdf' },
+            { id: 3, date: 'Nov 05', title: 'Hey Love', desc: 'Hello Love, I just wanted to say that I miss your neck and lips. you have over left me so alone.', image: 'shifra.jpeg', link: '#' },
+            { id: 4, date: 'Nov 12', title: 'Faculty Announcement', desc: 'Welcoming Mrs. Annun Amanda to the Theology department this spring.', image: 'https://ugandabaptistseminary.org/wp-content/uploads/2026/03/amanda-anunn.jpeg', link: '#' },
+            { id: 5, date: 'Dec 01', title: 'Scholarship Deadline', desc: 'Applications for the Merit Scholarship are due by the end of the month.', image: 'https://ugandabaptistseminary.org/wp-content/uploads/2017/09/IMG_8100.jpg', link: '#' },
+            { id: 6, date: 'Dec 15', title: 'Prayer Requests', desc: 'Join us for an evening in prayer of Mr. Okello at Frost Chapel', image: 'https://ugandabaptistseminary.org/wp-content/uploads/2014/06/George-med.jpg', link: '#' }
+        ],
+
+        next() {
+            if (this.activeSlide >= this.slides.length - this.visibleItems) {
+                this.activeSlide = 0;
+            } else {
+                this.activeSlide++;
+            }
+        },
+
+        prev() {
+            if (this.activeSlide <= 0) {
+                this.activeSlide = this.slides.length - this.visibleItems;
+            } else {
+                this.activeSlide--;
+            }
+        },
+
+        startTimer() {
+            this.timer = setInterval(() => this.next(), 5000);
+        },
+
+        stopTimer() {
+            clearInterval(this.timer);
+        },
+
+        init() {
+            this.startTimer();
+            // Crucial: Update innerWidth so visibleItems updates reactively
+            window.addEventListener('resize', () => {
+                this.innerWidth = window.innerWidth;
+                if (this.activeSlide > this.slides.length - this.visibleItems) {
+                    this.activeSlide = Math.max(0, this.slides.length - this.visibleItems);
+                }
+            });
+        }
+    }))
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+   <section id="involved" class="py-24 bg-slate-50 scroll-mt-20 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-16 text-center">
+        <span class="text-ubs-gold text-xs font-bold uppercase tracking-[0.2em] mb-4 block">Partner With Us</span>
+        <h2 class="text-3xl md:text-5xl font-serif text-ubs-blue mb-6">Get Involved</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto mb-16">The work of theological education requires the global body of Christ. There are many ways you can stand with us in equipping the next generation of leaders.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-100">
+                <div class="w-12 h-12 bg-blue-100 text-ubs-blue rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-serif text-ubs-blue mb-3">Pray With Us</h3>
+                <p class="text-slate-600 text-sm mb-4">Join our prayer network to receive monthly updates on the spiritual needs of our students, faculty, and campus projects.</p>
+                <a href="newsletter.html" class="text-ubs-gold font-bold text-xs uppercase tracking-widest">Subscribe to Newsletter &rarr;</a>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-100">
+                <div class="w-12 h-12 bg-amber-100 text-ubs-hover rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-serif text-ubs-blue mb-3">Visit Campus</h3>
+                <p class="text-slate-600 text-sm mb-4">We welcome mission teams, guest lecturers, and visitors. Come see firsthand what God is doing on our campus in Jinja.</p>
+                <a href="explore.html" class="text-ubs-gold font-bold text-xs uppercase tracking-widest">Plan a Visit &rarr;</a>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-100">
+                <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-serif text-ubs-blue mb-3">Volunteer</h3>
+                <p class="text-slate-600 text-sm mb-4">From construction projects to library cataloging, we occasionally have needs for short-term and long-term volunteers.</p>
+                <a href="contact.html" class="text-ubs-gold font-bold text-xs uppercase tracking-widest">Contact Us &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="give" class="py-24 bg-ubs-blue text-white scroll-mt-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#F0A30A 2px, transparent 2px); background-size: 30px 30px;"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="flex flex-col">
+                <h2 class="text-4xl md:text-5xl font-serif mb-6">Invest in the Kingdom</h2>
+                <p class="text-blue-100 mb-8 leading-relaxed text-lg">
+                    70% of every student's tuition is subsidized by faithful donors. Your financial gift directly provides scholarships, funds campus development, and ensures that financial hardship never prevents a called leader from receiving theological training.
+                </p>
+                
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3">
+                        <div class="bg-ubs-gold rounded-full p-1 shadow-sm">
+                            <svg class="w-4 h-4 text-ubs-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-white font-medium">Sponsor a student's semester</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="bg-ubs-gold rounded-full p-1 shadow-sm">
+                            <svg class="w-4 h-4 text-ubs-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-white font-medium">Fund library expansions and resources</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="bg-ubs-gold rounded-full p-1 shadow-sm">
+                            <svg class="w-4 h-4 text-ubs-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-white font-medium">Support general campus operations</span>
+                    </li>
+                </ul>
+
+                <a href="donate.html" class="group text-xs font-bold uppercase tracking-widest text-ubs-gold w-fit flex items-center gap-2 transition-colors duration-300 hover:text-white">
+                    Learn More About Giving 
+                    <svg class="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="bg-white text-slate-900 rounded-2xl p-8 md:p-12 shadow-2xl flex flex-col items-center justify-center text-center">
+                <h3 class="text-2xl md:text-3xl font-serif text-ubs-blue mb-3">Support UBS Directly</h3>
+                <p class="text-slate-500 text-sm md:text-base mb-8 max-w-sm">
+                    Give securely via the 
+                    <a href="https://www.imb.org/give/project/uganda-theological-education-team/" target="_blank" rel="noopener" class="text-ubs-blue font-bold underline decoration-ubs-gold/30 underline-offset-4 transition-colors hover:decoration-ubs-gold">IMB website</a> 
+                    or scan the QR code below.
+                </p>
+                
+                <a href="https://www.imb.org/give/project/uganda-theological-education-team/" target="_blank" rel="noopener" class="group block relative p-6 border-2 border-slate-100 rounded-3xl bg-slate-50 shadow-inner overflow-hidden">
+                    <img src="https://ugandabaptistseminary.org/wp-content/uploads/2024/12/qr-code.jpg" alt="Scan to donate to UBS" class="w-48 h-48 md:w-64 md:h-64 object-contain rounded-xl mix-blend-multiply transition-transform duration-500 group-hover:scale-105">
+                    
+                    <div class="absolute inset-0 bg-ubs-blue/20 backdrop-blur-[2px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-3xl">
+                        <span class="bg-ubs-gold text-ubs-blue text-xs font-black uppercase tracking-tighter px-6 py-3 rounded-full shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 -rotate-2">
+                            Click to Give Online
+                        </span>
+                    </div>
+                </a>
+                
+                <p class="mt-6 text-xs text-slate-400 font-medium italic">Partnering with IMB for secure global processing</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+    @keyframes slowBounce {
+        0%, 100% {
+            transform: translate(-50%, 0); /* Maintain the left-1/2 centering */
+        }
+        50% {
+            transform: translate(-50%, -10px); /* Move up 10px */
+        }
+    }
+    .animate-slow-bounce {
+        animation: slowBounce 3s ease-in-out infinite;
+    }
+</style>
+
+<footer class="bg-white text-slate-800 pt-12 pb-8 px-6 lg:px-16 border-t border-slate-100 relative mt-10">
+    <div class="max-w-7xl mx-auto flex flex-col items-center gap-6">
+        
+        <a href="#" 
+           class="absolute -top-5 left-1/2 -translate-x-1/2 bg-ubs-blue text-white p-3 rounded-full shadow-lg hover:bg-ubs-gold transition-colors duration-300 group animate-slow-bounce" 
+           title="Back to Top">
+            <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+            </svg>
+        </a>
+
+         <nav class="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-[11px] font-bold uppercase tracking-widest text-slate-600">
+            <a href="index.html#calendar" class="hover:text-ubs-gold transition">Academic Calendar</a>
+            <span class="text-slate-300">|</span>
+            <a href="admissions.html" class="hover:text-ubs-gold transition">Admissions</a>
+            <span class="text-slate-300">|</span>
+            <a href="programs.html#certificate" class="hover:text-ubs-gold transition">Certificate</a>
+            <span class="text-slate-300">|</span>
+            <a href="programs.html#diploma" class="hover:text-ubs-gold transition">Diploma</a>
+            <span class="text-slate-300">|</span>
+            <a href="programs.html#bachelor" class="hover:text-ubs-gold transition">Bachelor</a>
+            <span class="text-slate-300">|</span>
+            <a href="contact.html" class="hover:text-ubs-gold transition">Contact Us</a>
+            <span class="text-slate-300">|</span>
+            <a href="#give" class="text-ubs-blue hover:text-ubs-gold transition">Donate</a>
+        </nav>
+
+
+        <div class="flex items-center gap-6 py-2">
+            <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors" title="Facebook">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-sky-500 transition-colors" title="Twitter">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-red-600 transition-colors" title="YouTube">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
+
+        <div class="w-full border-t border-slate-100 pt-8 flex justify-center items-center">
+            <p class="text-[10px] text-slate-400 tracking-widest uppercase text-center">&copy; 2026 MASABA BRIAN. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
+
+
+
+</body>
+
+</html>

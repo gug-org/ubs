@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Programs | Uganda Baptist Seminary</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ubs-blue': '#1e3a8a',
+                        'ubs-gold': '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>[x-cloak] { display: none !important; }</style>
+</head>
+
+<body class="font-sans text-slate-900 bg-white">
+
+    <nav x-data="{ mobileMenuOpen: false }" class="relative z-50 bg-white px-6 lg:px-16 py-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="h-8 w-8 bg-ubs-blue rounded-sm flex items-center justify-center text-white font-bold text-xs">UBS</div>
+            <h1 class="font-serif text-sm uppercase tracking-widest font-bold text-ubs-blue hidden sm:block">Uganda Baptist Seminary</h1>
+        </a>
+
+        <ul class="hidden lg:flex items-center space-x-8 font-semibold uppercase text-[10px] tracking-[0.2em] text-slate-500">
+            <li><a href="about.html" class="hover:text-ubs-gold transition">About</a></li>
+            <li><a href="programs.html" class="text-ubs-blue border-b border-ubs-blue">Programs</a></li>
+            <li><a href="admissions.html" class="hover:text-ubs-gold transition">Admissions</a></li>
+            <li><a href="campus.html" class="hover:text-ubs-gold transition">Campus</a></li>
+            <li><a href="contact.html" class="hover:text-ubs-gold transition">Contact</a></li>
+        </ul>
+
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-ubs-blue">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+
+        <div x-cloak x-show="mobileMenuOpen" class="absolute top-full left-0 w-full bg-white shadow-xl lg:hidden flex flex-col p-6 space-y-4 text-[10px] font-bold uppercase tracking-widest border-t">
+            <a href="about.html">About</a>
+            <a href="programs.html">Programs</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="index.html#give" class="text-ubs-gold">Donate</a>
+        </div>
+    </nav>
+
+    <header class="px-6 lg:px-16 pt-12 pb-6 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <nav class="text-[10px] uppercase tracking-widest text-slate-400 mb-2">
+                    <a href="index.html" class="hover:text-ubs-gold">Home</a> / <span class="text-slate-600">Programs</span>
+                </nav>
+                <h2 class="font-serif text-4xl md:text-5xl text-ubs-blue">Academic Programs</h2>
+            </div>
+            <p class="text-slate-500 text-sm italic font-serif md:text-right max-w-xs">
+                "Study to shew thyself approved unto God..."
+            </p>
+        </div>
+    </header>
+
+    <main class="px-6 lg:px-16 py-16 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-1 space-y-8">
+                <div class="bg-slate-50 p-8 rounded-sm border-l-4 border-ubs-gold">
+                    <h3 class="font-bold uppercase text-xs tracking-widest mb-4">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-ubs-gold transition flex items-center gap-2">→ Application Form</a></li>
+                        <li><a href="#" class="hover:text-ubs-gold transition flex items-center gap-2">→ Tuition Rates</a></li>
+                        <li><a href="#" class="hover:text-ubs-gold transition flex items-center gap-2">→ Scholarships</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 prose prose-slate max-w-none">
+                <p class="text-lg leading-relaxed text-slate-700 mb-6">
+                    Our curriculum is designed to balance rigorous academic study with practical ministry experience. We offer various levels of certification to meet the needs of every calling.
+                </p>
+                <div class="h-px bg-slate-100 w-full my-8"></div>
+                <h4 class="font-serif text-2xl text-ubs-blue mb-4">Bachelor of Theology</h4>
+                <p class="text-slate-600 mb-6">A comprehensive four-year program for those seeking deep biblical foundation and leadership skills for the local church and beyond.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-20 border-t border-slate-100 py-12 px-6 lg:px-16 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] text-slate-400 tracking-widest uppercase">© 2026 Uganda Baptist Seminary</p>
+            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-600">
+                <a href="#" class="hover:text-ubs-gold">Privacy</a>
+                <a href="#" class="hover:text-ubs-gold">Terms</a>
+                <a href="#" class="text-ubs-blue">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

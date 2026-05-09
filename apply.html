@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Uganda Baptist Seminary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sbts-navy: #002d56;
+            --sbts-gold: #b3a369;
+            --sbts-red: #8b0000;
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            background-color: #fff;
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            background-color: var(--sbts-navy);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--sbts-gold);
+        }
+
+        header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* --- Steps Grid --- */
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .step-card {
+            display: flex;
+            background: white;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            background-color: var(--sbts-navy);
+            color: var(--sbts-gold);
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 4px solid var(--sbts-gold);
+        }
+
+        .step-content {
+            padding: 25px;
+        }
+
+        .step-content h3 {
+            margin-top: 0;
+            color: var(--sbts-navy);
+            font-family: 'Lora', serif;
+        }
+
+        /* --- Download Section --- */
+        .download-box {
+            background-color: var(--light-gray);
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--sbts-red);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #600000;
+        }
+
+        .btn-gold {
+            background-color: var(--sbts-gold);
+            color: var(--sbts-navy);
+        }
+
+        .btn-gold:hover {
+            background-color: #9c8d57;
+        }
+
+        /* --- Footer Info --- */
+        .footer-notice {
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            padding-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .step-card { flex-direction: column; }
+            .step-number { padding: 10px 0; border-right: none; border-bottom: 4px solid var(--sbts-gold); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Uganda Baptist Seminary</h1>
+        <p>Training Gospel Workers for the Harvest in East Africa</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="intro-text">
+            <h2 style="font-family: 'Lora', serif;">Application Guide</h2>
+            <p>Welcome to the Admissions Office. We are pleased to assist you in your journey toward theological training. Follow the steps below to submit your application via email.</p>
+        </div>
+
+        <div class="steps-container">
+            
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Confirm Eligibility</h3>
+                    <p>Review NCHE requirements for your desired program:</p>
+                    <ul>
+                        <li><strong>Certificate:</strong> UCE with 3 passes.</li>
+                        <li><strong>Diploma:</strong> UACE with 1 Principal Pass.</li>
+                        <li><strong>Bachelor's:</strong> UACE with 2 Principal Passes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Download & Complete</h3>
+                    <p>Download the PDF application form. Please fill it out in clear <strong>Block Letters</strong> and sign the Statement of Faith.</p>
+                    <a href="#" class="btn">Download PDF Form</a>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Gather Attachments</h3>
+                    <p>Scan your UCE/UACE passlips, a copy of your National ID, and a signed recommendation letter from your local Pastor.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Application Fee</h3>
+                    <p>Pay the non-refundable fee via Mobile Money or Bank Deposit. Attach a screenshot or scan of your receipt to your application email.</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <h3>Submit via Email</h3>
+                    <p>Send all documents to <strong>admissions@ubseminary.ac.ug</strong>.<br> Use the subject line: <em>Application: [Your Name] - [Program]</em></p>
+                    <a href="mailto:admissions@ubseminary.ac.ug" class="btn btn-gold">Compose Email Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-notice">
+            <p><strong>Questions?</strong> Contact the Registrar's Office at +256 [Phone Number] or visit our Jinja Campus.</p>
+            <p>&copy; 2024 Uganda Baptist Seminary. All Rights Reserved.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
